@@ -1,0 +1,81 @@
+[*]
+[*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
+[*] Thu Jul 30 23:43:19 2020
+[*]
+[dumpfile] "/home/013708526/UVM/UART/UART_Verif/top/output.vcd"
+[dumpfile_mtime] "Thu Jul 30 23:35:20 2020"
+[dumpfile_size] 112605768
+[savefile] "/home/013708526/UVM/UART/UART_Verif/top/wave.gtkw"
+[timestart] 12185000
+[size] 1920 977
+[pos] -46 -46
+*-18.487988 13482780 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.wrap.
+[sst_width] 229
+[signals_width] 229
+[sst_expanded] 1
+[sst_vpaned_height] 270
+@28
+top.vif.clk
+top.vif.TX_DV
+@22
+top.vif.TX_BYTE[7:0]
+@24
+top.vif.clk_freq[25:0]
+top.vif.uart_baud[19:0]
+top.vif.data_bits_tx[3:0]
+top.vif.stop_bits_tx[1:0]
+@28
+top.vif.TX_Active
+top.vif.TX_serial
+top.vif.TX_Done
+top.vif.rx_serial
+@22
+top.vif.rx_parallel[7:0]
+@28
+top.vif.rx_data_valid
+@200
+-
+-TX
+@28
+top.wrap.utr.clk
+top.wrap.utr.TX_DV
+@22
+top.wrap.utr.TX_BYTE[7:0]
+@28
+top.wrap.utr.State[2:0]
+top.wrap.utr.bit_index[2:0]
+@24
+top.wrap.utr.data_bits_tx[3:0]
+top.wrap.utr.stop_bits_tx[1:0]
+top.wrap.utr.clk_freq[25:0]
+top.wrap.utr.uart_baud[19:0]
+top.wrap.utr.CLKS_PER_BITS[13:0]
+@28
+top.wrap.utr.TX_Active
+top.wrap.utr.TX_serial
+top.wrap.utr.TX_Done
+@200
+-
+-RX
+@28
+top.wrap.utx.clk
+top.wrap.utx.rx_serial
+top.wrap.utx.State[2:0]
+top.wrap.utx.bit_index[2:0]
+@24
+top.wrap.utx.clk_freq[25:0]
+top.wrap.utx.uart_baud[19:0]
+top.wrap.utx.CLKS_PER_BITS[13:0]
+@22
+top.wrap.utx.data_bits_rx[3:0]
+@24
+top.wrap.utx.stop_bits_rx[1:0]
+@22
+top.wrap.utx.rx_byte[7:0]
+top.wrap.utx.rx_parallel[7:0]
+@29
+top.wrap.utx.rx_data_valid
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,84 @@
+$date
+	Fri Jun 26 19:43:55 2020
+$end
+
+$version
+	Synopsys VCS version I-2014.03-2
+$end
+
+$timescale
+	1s
+$end
+
+$comment Csum: 1 40f8e4e7d274061d $end
+
+
+$scope module tb $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 8 # datain [7:0] $end
+$var reg 1 $ wr $end
+$var reg 1 % rd $end
+$var wire 8 & dataout [7:0] $end
+$var wire 1 ' emp $end
+$var wire 1 ( full $end
+
+$scope module dut $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 8 # datain [7:0] $end
+$var reg 1 $ wr $end
+$var reg 1 % rd $end
+$var reg 8 ) dataout [7:0] $end
+$var wire 1 ' emp $end
+$var wire 1 ( full $end
+$var reg 3 * wr_ptr [2:0] $end
+$var reg 3 + rd_ptr [2:0] $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+1'
+0(
+x%
+1"
+x$
+bxxxxxxxx #
+bxxxxxxxx )
+b000 +
+bxxxxxxxx &
+b000 *
+$end
+#10
+0"
+#20
+1!
+0%
+1$
+b01000100 #
+b001 *
+0'
+#25
+b01010101 #
+#30
+b00100010 #
+#35
+b00100100 #
+#40
+0!
+b01110111 #
+#45
+b01010110 #
+#50
+b00001001 #
+#55
+b01000101 #
+#60
+1!
+1%
+0$

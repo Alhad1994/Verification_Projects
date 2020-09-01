@@ -1,0 +1,184 @@
+// data bits /4 messup
+module uart_rx (clk,rx_serial,rx_parallel,rx_data_valid,data_bits_rx,stop_bits_rx);
+
+    // clk freq = 25MHZ and uart freq is 115200 which relates 25000000 / 115200 = 217 
+    parameter CLKS_PER_BIT = 217; // This is clk / uart frequency 
+    
+    // states for state machine defined 
+    parameter IDLE = 3'b000;
+    parameter START_BIT = 3'b001;
+    parameter RX_DATA_BITS = 3'b010;
+    parameter STOP_BIT = 3'b011;
+    parameter CLEAN = 3'b111;
+    
+    // Internal variables 
+    input clk;
+    input rx_serial;
+    output reg [7:0] rx_parallel ;
+    input reg [3:0] data_bits_rx;
+    input reg [1:0] stop_bits_rx;
+    reg [7:0] rx_byte = 0; // used to buffer up the rx_parallel
+    output reg rx_data_valid = 0;
+    reg [8:0] rx_counter = 0; // for counting the clks to sample data
+    reg [2:0] bit_index = 0; // for keeping track of data index in array for parallel stream of data
+    reg [2:0] State = 0; // state variable 
+    reg [2:0] parity_check;
+  
+  
+    always @ (posedge clk)
+    begin
+    
+      case (State)
+      
+      IDLE : begin
+		rx_byte <= 1'b0;
+		rx_counter <= 1'b0;
+		bit_index <= 1'b0;
+		parity_check = 1'b0;
+		  if(rx_serial == 1'b0)   // start bit detected 
+		    State <= START_BIT ;
+		  else
+		    State <= IDLE; // Else remain in IDLE until start is detected
+	     end
+      
+      START_BIT : 
+		  begin
+		    if (rx_counter == (CLKS_PER_BIT-1)/2) // counter reached 108 i.e middle of data (217/2)
+		      begin
+			if (rx_serial == 1'b0) // check if rx line is still low 
+			  begin
+			    rx_counter <= 1'b0; //reset counter 
+			    State  <= RX_DATA_BITS; // sample data with going to next state
+			  end
+			else 
+			  State <= IDLE;
+		      end
+		    else 
+		      begin
+			rx_counter <= rx_counter + 1;
+			State <= START_BIT;
+		      end
+		  end
+      RX_DATA_BITS : begin
+			if (rx_counter == CLKS_PER_BIT-1/4) // counter hits CLKS_PER_BIT 
+			  begin
+			    rx_counter <= 1'b0; // counter resets
+			    rx_byte [bit_index] <= rx_serial; // serial to parallel conversion LSB first so shift right
+			  case (data_bits_rx)
+		     
+			    4'd5: begin
+				    if (bit_index < 4) // Data is shifted out LSB first
+				      begin
+					bit_index <= bit_index + 1;
+					State <= RX_DATA_BITS;
+//  					$display ("5 bits are recieved : rx_serial = %h, rx_byte = %h", rx_serial,rx_byte);
+				      end
+				    else 
+				      begin
+					bit_index <= 0;
+					State <= STOP_BIT;
+				      end
+				  //$display("5 bits are recieved :tx_parallel = %h , tx_serial = %h",TX_BYTE,rx_serial);
+				  end
+			    4'd6: begin
+				if (bit_index < 5) // Data is shifted out LSB first
+				  begin
+				    bit_index <= bit_index + 1;
+				    State <= RX_DATA_BITS;
+//  				    $display ("6 bits are recieved: rx_serial = %h, rx_byte = %h", rx_serial,rx_byte);
+				  end
+				else 
+				  begin
+				    bit_index <= 0;
+				    State <= STOP_BIT;
+				  end
+      // 		        $display("tx_parallel = %h , tx_serial = %h",TX_BYTE,rx_serial);
+			      end
+			    4'd7: begin
+				if (bit_index < 6) // Data is shifted out LSB first
+				  begin
+				    bit_index <= bit_index + 1;
+				    State <= RX_DATA_BITS;
+// 				    $display ("7 bits are recieved: rx_serial = %h, rx_byte = %h", rx_serial,rx_byte);
+				  end
+				else 
+				  begin
+				    bit_index <= 0;
+				    State <= STOP_BIT;
+				  end
+      // 		        $display("tx_parallel = %h , tx_serial = %h",TX_BYTE,rx_serial);
+			      end
+			    4'd8: begin
+				if (bit_index < 7) // Data is shifted out LSB first
+				  begin
+				    bit_index <= bit_index + 1;
+				    State <= RX_DATA_BITS;
+// 				    $display ("8 bits are recieved :rx_serial = %h, rx_byte = %h", rx_serial,rx_byte);
+				  end
+				else 
+				  begin
+				    bit_index <= 0;
+				    State <= STOP_BIT;
+				  end
+      // 		        $display("tx_parallel = %h , tx_serial = %h",TX_BYTE,rx_serial);
+			      end
+			    endcase
+			  end
+			else  // counter less than CLKS_PER_BIT than incremnet counter until it reaches CLKS_PER_BIT
+			  begin
+			    rx_counter <= rx_counter + 1; //increment counter 
+			    State <= RX_DATA_BITS;  // stay in same state
+			  end  
+		      end
+		     
+	STOP_BIT : begin
+		    if(stop_bits_rx==1)
+		      begin
+			if (rx_counter < (CLKS_PER_BIT-1)) // counter less than CLKS_PER_BIT than incremnet counter until it reaches CLKS_PER_BIT
+			    begin
+			      rx_counter <= rx_counter + 1; // increment counter 
+			      State <= STOP_BIT; // stay in same state
+			      
+			    end
+			else 
+			  begin
+			    rx_data_valid <= 1'b1; // tells that data recieved is valid ....
+			    rx_counter <= 1'b0;
+			    
+			    State <= CLEAN;
+			  end
+		      end
+		   
+		  else if (stop_bits_rx==2)
+		    begin
+			  if (rx_counter < 2*(CLKS_PER_BIT-1)) // counter less than CLKS_PER_BIT than incremnet counter until it reaches CLKS_PER_BIT
+			    begin
+			      rx_counter <= rx_counter + 1; // increment counter 
+			      State <= STOP_BIT; // stay in same state
+			      
+			    end
+			else 
+			  begin
+			    rx_data_valid <= 1'b1; // tells that data recieved is valid ....
+			    rx_counter <= 1'b0;
+// 			    $display(" 2 stop bits received : Stop_bit = %g",rx_serial);
+			    State <= CLEAN;
+			  end
+		    end   
+		 end
+        CLEAN :  // data_valid is high for one clock and then state return to idle
+	      begin
+		rx_data_valid <= 1'b0;
+		State <= IDLE;
+		
+		//$display("rx_parallel =%h",rx_parallel);
+	      end
+        
+        default : State <= IDLE; // default is IDLE
+        
+        endcase 
+      
+    end
+    assign rx_parallel = rx_byte;
+   
+  endmodule : uart_rx

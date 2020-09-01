@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+source /apps/design_environment.sh
+vcs +systemverilogext+.sv -sverilog $@
+status=$?
+if [ $status -ne 0 ]; then
+	exit $status
+fi
+./simv 
+

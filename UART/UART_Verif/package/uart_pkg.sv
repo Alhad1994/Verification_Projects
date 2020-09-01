@@ -1,0 +1,12 @@
+
+   `include "./../seq/uart_tr.sv"
+   `include "./../seq/uart_seq.sv"
+   `include "./../uvc/uart_seqr.sv"
+   `include "./../uvc/uart_driver.sv"
+   `include "./../uvc/uart_monitor.sv"
+   `include "./../uvc/uart_edge_det.sv"
+   `include "./../uvc/uart_pw.sv"
+   `include "./../uvc/uart_comb.sv"
+   `include "./../uvc/uart_agent.sv"
+   `include "./../uvc/uart_env.sv"
+   `include "./../test/uart_test.sv"
