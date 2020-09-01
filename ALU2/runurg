@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+source /apps/design_environment.sh
+urg -lca -metric group+line+cond -dir simv.vdb 
+firefox urgReport/dashboard.html
+

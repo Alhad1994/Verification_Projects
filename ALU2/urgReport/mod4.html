@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: top</title>
+<link type="text/css" rel="stylesheet" href=".urg.css">
+<script type="text/javascript" src=".sortable.js"></script></head>
+<body><center><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | <a href="groups.html" ><b>groups</b></a> | <a href="tests.html" ><b>tests</b></a> | asserts</center>
+<br>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="modlist.html#tag_top" >top</a></span>
+<br clear=all>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td></tr><tr>
+<td class="s9 cl rt"> 90.00</td>
+<td class="s9 cl rt"><a href="mod4.html#Line" > 90.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="file:///home/013708526/UVM/ALU2/top.sv" >/home/013708526/UVM/ALU2/top.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left class="sml">
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s9 cl rt"> 90.00</td>
+<td class="s9 cl rt"><a href="mod4.html#Line" > 90.00</a></td>
+<td class="wht cl rt"></td>
+<td><a href="mod4.html#inst_tag_4" >top</a></td>
+</tr></table></div>
+<br clear=all>
+<hr>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod4.html" >top</a><br clear=all>
+<table class="rt">
+<col width="122">
+<col span="4" width="82">
+<tr><th><th>Line No.<th>Total<th>Covered<th>Percent
+<tr class="s9"><td class="lf">TOTAL<td><td>20<td>18<td>90.00
+<tr class="s10"><td class="lf">INITIAL<td>101<td>9<td>9<td>100.00
+<tr class="s10"><td class="lf">INITIAL<td>115<td>4<td>4<td>100.00
+<tr class="s6"><td class="lf">INITIAL<td>122<td>5<td>3<td>60.00
+<tr class="s10"><td class="lf">INITIAL<td>130<td>2<td>2<td>100.00
+</table>
+<pre class="code"><br clear=all>
+100                         begin
+101        1/1              cov.start();
+102        1/1              cros.start();
+103        2/2              #100216;
+104        1/1              $display(&quot;\n At the end of run\n&quot;);
+105        1/1              cov.stop();
+106        1/1              cros.stop();
+107        1/1              $display(&quot;\n\n\n Inputs covered\n\n\n&quot;,cov.ctl.get_coverage());
+108        1/1              $display(&quot;Time is &quot;,$time);
+109                         end
+110                       /// End Covergroups ..........................  
+111                         
+112                         
+113                        initial 
+114                        begin
+115        1/1              vif.clk =0;
+116        3/3              forever #5 vif.clk = ~ vif.clk;
+117                        end
+118                     
+119                       
+120                        initial 
+121                         begin
+122        1/1              uvm_config_db #(virtual alu_if)::set (null,&quot;bob&quot;,&quot;vif&quot;,vif);// replaced the name test_top with a * to work (ask morris)
+123        1/1                run_test(&quot;alu_test&quot;);
+124        <font color = "red">1/2     ==>        #100;</font>
+125        <font color = "red">0/1     ==>        $finish;</font>
+126                         end
+127                         
+128                         initial begin
+129                         
+130        1/1              $dumpvars(9,top);
+131        1/1              $dumpfile(&quot;output.vcd&quot;);
+</pre>
+<br clear=all>
+Go to <a href="mod4.html" >top</a>
+<hr>
+<a name="inst_tag_4"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_4" >top</a></span>
+<br clear=all>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td></tr><tr>
+<td class="s9 cl rt"> 90.00</td>
+<td class="s9 cl rt"><a href="mod4.html#Line" > 90.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td></tr><tr>
+<td class="s9 cl rt"> 90.00</td>
+<td class="s9 cl rt"> 90.00</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Module : </span>
+<br clear=all>
+<table align=left class="sml">
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s9 cl rt"> 90.00</td>
+<td class="s9 cl rt"> 90.00</td>
+<td class="wht cl rt"></td>
+<td><a href="mod4.html" >top</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<span class=inst>none</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<br clear=all>
+<span class=inst>no children</span>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.<br clear=all>
+<hr>
+<center><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | <a href="groups.html" ><b>groups</b></a> | <a href="tests.html" ><b>tests</b></a> | asserts</center>
+<br>
+<br clear=all>
+<br clear=all>
+<table align=center><tr><td class="s0 cl">0%
+<td class="s1 cl">10%
+<td class="s2 cl">20%
+<td class="s3 cl">30%
+<td class="s4 cl">40%
+<td class="s5 cl">50%
+<td class="s6 cl">60%
+<td class="s7 cl">70%
+<td class="s8 cl">80%
+<td class="s9 cl">90%
+<td class="s10 cl">100%</table></body>
+</html>

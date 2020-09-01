@@ -1,0 +1,25 @@
+<session version="1.1" release="I-2014.03-2" timestp="2020-04-27 03:09:42 GMT">
+  <hvp>
+    <datadef>
+      <metdef name="Line" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Cond" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Group" type="percent" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Line" value="18/20" />
+    <metric name="Group" value="88.944%" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+    <scope type="group" name="top::cross_op">
+      <metric name="Group" value="86.2213%" />
+    </scope>
+    <scope type="group" name="top::op_cov">
+      <metric name="Group" value="91.6667%" />
+    </scope>
+  </scope>
+  </old_coverage>
+</session>

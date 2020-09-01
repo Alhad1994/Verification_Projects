@@ -1,0 +1,242 @@
+global coverage_group 0 op_cov __coverage_op_cov unused_op_cov_loop_label top 0 0 0 ( )
+ 1 1
+ 31 /home/013708526/UVM/ALU2/top.sv
+ 48 0 0 0 0 0 0 0 0  0
+0
+26 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+0
+0
+0
+64
+0
+ 0
+
+6
+0
+0
+ 3 ctl 50 0 0 0 21 op_cov::top_op_cov_fn 21 op_cov::top_op_cov_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 1 1 1 1 0 1 1 7 control 51 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_0 0 23 op_cov::top_op_cov_fn_1 0 0 0 0 0
+
+ 4 in_a 60 0 0 0 23 op_cov::top_op_cov_fn_2 23 op_cov::top_op_cov_fn_2 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 8 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 3 1 1 0 0 1 1 5 zeros 61 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_3 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 4 ones 62 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_4 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 6 others 63 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_5 0 23 op_cov::top_op_cov_fn_6 0 0 0 0 0
+
+ 4 in_b 66 0 0 0 23 op_cov::top_op_cov_fn_7 23 op_cov::top_op_cov_fn_7 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 8 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 3 1 1 0 0 1 1 5 zeros 67 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_3 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 4 ones 68 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_4 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 6 others 69 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_5 0 23 op_cov::top_op_cov_fn_6 0 0 0 0 0
+
+ 5 in_ci 71 0 0 0 23 op_cov::top_op_cov_fn_8 23 op_cov::top_op_cov_fn_8 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 1 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 5 zeros 72 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_9 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 4 ones 73 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_a 0 0 0 0 0 0 0
+
+ 9 in_pushin 76 0 0 0 23 op_cov::top_op_cov_fn_b 23 op_cov::top_op_cov_fn_b 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 1 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 5 zeros 77 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_9 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 4 ones 78 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_a 0 0 0 0 0 0 0
+
+ 9 in_stopin 81 0 0 0 23 op_cov::top_op_cov_fn_c 23 op_cov::top_op_cov_fn_c 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 1 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 5 zeros 82 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_9 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 4 ones 83 0 1 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 23 op_cov::top_op_cov_fn_a 0 0 0 0 0 0 0
+
+end_coverage_group
+global coverage_group 0 cross_op __coverage_cross_op unused_cross_op_loop_label top 0 0 0 ( )
+ 0 89 0 0 0 0 0 0 0 0  0
+0
+26 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+0
+0
+0
+64
+0
+ 0
+
+3
+0
+1
+ 5 vif.a 91 0 0 0 25 cross_op::top_cross_op_fn 25 cross_op::top_cross_op_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 8 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 5 vif.b 91 0 0 0 27 cross_op::top_cross_op_fn_0 27 cross_op::top_cross_op_fn_0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 8 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 7 vif.ctl 91 0 0 0 27 cross_op::top_cross_op_fn_1 27 cross_op::top_cross_op_fn_1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 1 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 6 add_00 0 91 0 0 0 0 3 0 1 2 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group
