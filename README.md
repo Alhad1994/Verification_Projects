@@ -1,5 +1,5 @@
 # Verification_Projects
-Pulse Width Modulation (Stepper motor controller verification)
+Pulse Width Modulation (Stepper motor controller verification) PWM
 
   •	Designed a UVM TB environment along with constrained random sequences for various bridge Modes with different alignments for NXP SAC57D54H specification
 
